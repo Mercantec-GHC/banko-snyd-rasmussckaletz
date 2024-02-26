@@ -1,4 +1,6 @@
-﻿namespace BankoCheater
+﻿using System.Net.Http.Headers;
+
+namespace BankoCheater
 {
     internal class Program
     {
@@ -24,47 +26,56 @@
             do
             {
                 Console.Write("Enter a number: ");
-                selectedNumber = int.Parse(Console.ReadLine());
-
-                foreach (var row in dic)
+                try
                 {
-                    if (row.Value.Contains(selectedNumber))
+                    selectedNumber = int.Parse(Console.ReadLine());
+
+                    foreach (var row in dic)
                     {
-                        if (row.Key == "Rasmus1-row1")
+                        if (row.Value.Contains(selectedNumber))
                         {
-                            row1Counter++;
-                        }
-                        else if (row.Key == "Rasmus1-row2")
-                        {
-                            row2Counter++;
-                        }
-                        else if (row.Key == "Rasmus1-row3")
-                        {
-                            row3Counter++;
+                            if (row.Key == "Rasmus1-row1")
+                            {
+                                row1Counter++;
+                            }
+                            else if (row.Key == "Rasmus1-row2")
+                            {
+                                row2Counter++;
+                            }
+                            else if (row.Key == "Rasmus1-row3")
+                            {
+                                row3Counter++;
+                            }
                         }
                     }
-                }
 
-                if (row1Counter == 5)
-                {
-                    Console.WriteLine("BANKO! Row1");
-                    row1Counter++;
-                }
-                if (row2Counter == 5)
-                {
-                    Console.WriteLine("BANKO! Row2");
-                    row2Counter++;
-                }
-                if (row3Counter == 5)
-                {
-                    Console.WriteLine("BANKO! Row3");
-                    row3Counter++;
-                }
+                    if (row1Counter == 5)
+                    {
+                        Console.WriteLine("BANKO! Row1");
+                        row1Counter++;
+                    }
+                    if (row2Counter == 5)
+                    {
+                        Console.WriteLine("BANKO! Row2");
+                        row2Counter++;
+                    }
+                    if (row3Counter == 5)
+                    {
+                        Console.WriteLine("BANKO! Row3");
+                        row3Counter++;
+                    }
 
-                if (row1Counter == 6 && row2Counter == 6 && row3Counter == 6)
+                    if (row1Counter == 6 && row2Counter == 6 && row3Counter == 6)
+                    {
+                        fullPlate = true;
+                    }
+
+
+                } catch (FormatException)
                 {
-                    fullPlate = true;
+                    Console.WriteLine("Numbers only.");
                 }
+                
 
             } while (fullPlate == false);
 
