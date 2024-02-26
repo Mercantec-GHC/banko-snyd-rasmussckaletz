@@ -4,9 +4,68 @@
     {
         static void Main(string[] args)
         {
-            int[] rasmus1Row1 = [1, 20, 32, 71, 80];
-            int[] rasmus1Row2 = [3, 11, 21, 38, 44];
-            int[] rasmus1Row3 = [15, 29, 49, 58, 68];
+            int[] rasmus1Row1 = new int[] { 1, 20, 32, 71, 80 };
+            int[] rasmus1Row2 = new int[] { 3, 11, 21, 38, 44 };
+            int[] rasmus1Row3 = new int[] { 15, 29, 49, 58, 68 };
+
+            Dictionary<string, int[]> dic = new Dictionary<string, int[]>();
+            dic.Add("Rasmus1-row1", rasmus1Row1);
+            dic.Add("Rasmus1-row2", rasmus1Row2);
+            dic.Add("Rasmus1-row3", rasmus1Row3);
+
+            int row1Counter = 0;
+            int row2Counter = 0;
+            int row3Counter = 0;
+
+            /*foreach (KeyValuePair<string, int[]> dict in dic)
+            {
+                string currentArrayKey = dict.Key;
+                int[] currentArrayValues = dict.Value;
+                int targetNumber = 11;
+
+                if (currentArrayValues.Contains(targetNumber))
+                {
+                    Console.WriteLine($"{targetNumber} er i {currentArrayKey}");
+                }
+            }*/
+
+            int selectedNumber;
+
+            do 
+            {
+                
+
+            } while (row1Counter != 5 || row2Counter != 5 || row3Counter != 5);
+
+
+
+
+
+            if (row1Counter == 5)
+            {
+                Console.WriteLine("BANKO! Row1");
+            }
+
+            if (row2Counter == 5)
+            {
+                Console.WriteLine("BANKO! Row2");
+            }
+
+            if (row3Counter == 5)
+            {
+                Console.WriteLine("BANKO! Row3");
+            }
+
+
+
+
+
+
+
+
+            /*int[] rasmus1Row1 = { 1, 20, 32, 71, 80 };
+            int[] rasmus1Row2 = { 3, 11, 21, 38, 44 };
+            int[] rasmus1Row3 = { 15, 29, 49, 58, 68 };
 
             Dictionary<string, Array> dic = new Dictionary<string, Array>();
             dic.Add("Rasmus1-row1", rasmus1Row1);
@@ -15,13 +74,17 @@
 
             foreach (KeyValuePair<string, Array> dict in dic)
             {
-                
+                Array currentArray = dict.Value;
+                Console.WriteLine(currentArray);
+                break;
+                //Console.WriteLine(rasmus1Row1[0]);
+
                 /*if (dict.Value.Equals("68"))
                 {
                     Console.WriteLine("ja");
-                }*/
-                
-            }
+                }
+
+            }*/
 
 
 
