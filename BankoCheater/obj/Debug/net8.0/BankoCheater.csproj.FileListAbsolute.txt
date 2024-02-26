@@ -1,0 +1,15 @@
+C:\Users\Rasmus\Documents\GitHub\banko-snyd-rasmussckaletz\BankoCheater\bin\Debug\net8.0\BankoCheater.exe
+C:\Users\Rasmus\Documents\GitHub\banko-snyd-rasmussckaletz\BankoCheater\bin\Debug\net8.0\BankoCheater.deps.json
+C:\Users\Rasmus\Documents\GitHub\banko-snyd-rasmussckaletz\BankoCheater\bin\Debug\net8.0\BankoCheater.runtimeconfig.json
+C:\Users\Rasmus\Documents\GitHub\banko-snyd-rasmussckaletz\BankoCheater\bin\Debug\net8.0\BankoCheater.dll
+C:\Users\Rasmus\Documents\GitHub\banko-snyd-rasmussckaletz\BankoCheater\bin\Debug\net8.0\BankoCheater.pdb
+C:\Users\Rasmus\Documents\GitHub\banko-snyd-rasmussckaletz\BankoCheater\obj\Debug\net8.0\BankoCheater.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Rasmus\Documents\GitHub\banko-snyd-rasmussckaletz\BankoCheater\obj\Debug\net8.0\BankoCheater.AssemblyInfoInputs.cache
+C:\Users\Rasmus\Documents\GitHub\banko-snyd-rasmussckaletz\BankoCheater\obj\Debug\net8.0\BankoCheater.AssemblyInfo.cs
+C:\Users\Rasmus\Documents\GitHub\banko-snyd-rasmussckaletz\BankoCheater\obj\Debug\net8.0\BankoCheater.csproj.CoreCompileInputs.cache
+C:\Users\Rasmus\Documents\GitHub\banko-snyd-rasmussckaletz\BankoCheater\obj\Debug\net8.0\BankoCheater.sourcelink.json
+C:\Users\Rasmus\Documents\GitHub\banko-snyd-rasmussckaletz\BankoCheater\obj\Debug\net8.0\BankoCheater.dll
+C:\Users\Rasmus\Documents\GitHub\banko-snyd-rasmussckaletz\BankoCheater\obj\Debug\net8.0\refint\BankoCheater.dll
+C:\Users\Rasmus\Documents\GitHub\banko-snyd-rasmussckaletz\BankoCheater\obj\Debug\net8.0\BankoCheater.pdb
+C:\Users\Rasmus\Documents\GitHub\banko-snyd-rasmussckaletz\BankoCheater\obj\Debug\net8.0\BankoCheater.genruntimeconfig.cache
+C:\Users\Rasmus\Documents\GitHub\banko-snyd-rasmussckaletz\BankoCheater\obj\Debug\net8.0\ref\BankoCheater.dll
