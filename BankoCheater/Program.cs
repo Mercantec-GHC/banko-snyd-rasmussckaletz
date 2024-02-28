@@ -22,7 +22,6 @@ namespace BankoCheater
 
 
             HandlePlates(threePlatesDic);
-
         }
 
         static void HandlePlates(Dictionary<string, int[]> dic)
@@ -95,70 +94,27 @@ namespace BankoCheater
                         }
                     }
 
-
                     drawnNumbers.Add(selectedNumber);
 
 
-                    if (plate1Counter[0] == 5)
+                    for (int i = 0; i < 3; i++)
                     {
-                        Console.WriteLine("BANKO! Plate 1 - Row1");
-                        plate1Counter[0]++;
+                        plate1Counter[i] += HandleBankoOnPlate(plate1Counter[i], 1, (i + 1));
                     }
 
-                    if (plate1Counter[1] == 5)
+                    for (int i = 0; i < 3; i++)
                     {
-                        Console.WriteLine("BANKO! Plate 1 - Row2");
-                        plate1Counter[1]++;
+                        plate2Counter[i] += HandleBankoOnPlate(plate2Counter[i], 2, (i + 1));
                     }
 
-                    if (plate1Counter[2] == 5)
+                    for (int i = 0; i < 3; i++)
                     {
-                        Console.WriteLine("BANKO! Plate 1 - Row3");
-                        plate1Counter[2]++;
+                        plate3Counter[i] += HandleBankoOnPlate(plate3Counter[i], 3, (i + 1));
                     }
-
-
-
-                    if (plate2Counter[0] == 5)
-                    {
-                        Console.WriteLine("BANKO! Plate 2 - Row1");
-                        plate2Counter[0]++;
-                    }
-                    if (plate2Counter[1] == 5)
-                    {
-                        Console.WriteLine("BANKO! Plate 2 - Row2");
-                        plate2Counter[1]++;
-                    }
-                    if (plate2Counter[2] == 5)
-                    {
-                        Console.WriteLine("BANKO! Plate 2 - Row3");
-                        plate2Counter[2]++;
-                    }
-
-
-
-                    if (plate3Counter[0] == 5)
-                    {
-                        Console.WriteLine("BANKO! Plate 3 - Row1");
-                        plate3Counter[0]++;
-                    }
-                    if (plate3Counter[1] == 5)
-                    {
-                        Console.WriteLine("BANKO! Plate 3 - Row2");
-                        plate3Counter[1]++;
-                    }
-                    if (plate3Counter[2] == 5)
-                    {
-                        Console.WriteLine("BANKO! Plate 3 - Row3");
-                        plate3Counter[2]++;
-                    }
-
 
 
                     platesFull[0] = HandleFullPlate(plate1Counter[0], plate1Counter[1], plate1Counter[2], platesFull[0], 1);
-
                     platesFull[1] = HandleFullPlate(plate2Counter[0], plate2Counter[1], plate2Counter[2], platesFull[1], 2);
-
                     platesFull[2] = HandleFullPlate(plate3Counter[0], plate3Counter[1], plate3Counter[2], platesFull[2], 3);
 
 
@@ -167,26 +123,42 @@ namespace BankoCheater
                         Console.WriteLine("ALL PLATES FULL!");
                         gameActive = false;
                     }
-
-
                 }
+
                 catch (FormatException)
                 {
                     Console.WriteLine("Numbers only.");
                 }
-
 
             } while (gameActive == true);
         }
 
 
 
+        static int HandleBankoOnPlate(int plateCounter, int plateID, int rowID)
+        {
+            if (plateCounter == 5)
+            {
+                Console.WriteLine($"BANKO! Plate {plateID} - Row {rowID}");
+                return 1;
+            }
+
+            return 0;
+        }
+
+
         static bool HandleFullPlate(int firstRowCounter, int secondRowCounter, int thirdRowCounter, bool plateFull, int plateID) 
         {
-
-            if (firstRowCounter == 6 && secondRowCounter == 6 && thirdRowCounter == 6 && !plateFull)
+            if (!plateFull)
             {
-                Console.WriteLine($"FULL PLATE - PLATE {plateID}!");
+                if (firstRowCounter == 6 && secondRowCounter == 6 && thirdRowCounter == 6 && !plateFull)
+                {
+                    Console.WriteLine($"FULL PLATE - PLATE {plateID}!");
+                    return true;
+                }
+            } 
+            else
+            {
                 return true;
             }
 
