@@ -155,23 +155,12 @@ namespace BankoCheater
 
 
 
-                    if (plate1Counter[0] == 6 && plate1Counter[1] == 6 && plate1Counter[2] == 6 && platesFull[0] == false)
-                    {
-                        Console.WriteLine("FULL PLATE - PLATE 1!");
-                        platesFull[0] = true;
-                    }
+                    platesFull[0] = HandleFullPlate(plate1Counter[0], plate1Counter[1], plate1Counter[2], platesFull[0], 1);
 
-                    if (plate2Counter[0] == 6 && plate2Counter[1] == 6 && plate2Counter[2] == 6 && platesFull[1] == false)
-                    {
-                        Console.WriteLine("FULL PLATE - PLATE 2!");
-                        platesFull[1] = true;
-                    }
+                    platesFull[1] = HandleFullPlate(plate2Counter[0], plate2Counter[1], plate2Counter[2], platesFull[1], 2);
 
-                    if (plate3Counter[0] == 6 && plate3Counter[1] == 6 && plate3Counter[2] == 6 && platesFull[2] == false)
-                    {
-                        Console.WriteLine("FULL PLATE - PLATE 3!");
-                        platesFull[2] = true;
-                    }
+                    platesFull[2] = HandleFullPlate(plate3Counter[0], plate3Counter[1], plate3Counter[2], platesFull[2], 3);
+
 
                     if (platesFull[0] && platesFull[1] && platesFull[2])
                     {
@@ -188,6 +177,20 @@ namespace BankoCheater
 
 
             } while (gameActive == true);
+        }
+
+
+
+        static bool HandleFullPlate(int firstRowCounter, int secondRowCounter, int thirdRowCounter, bool plateFull, int plateID) 
+        {
+
+            if (firstRowCounter == 6 && secondRowCounter == 6 && thirdRowCounter == 6 && !plateFull)
+            {
+                Console.WriteLine($"FULL PLATE - PLATE {plateID}!");
+                return true;
+            }
+
+            return false;
         }
     }
 }
