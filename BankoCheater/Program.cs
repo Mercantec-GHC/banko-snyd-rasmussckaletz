@@ -36,6 +36,8 @@ namespace BankoCheater
 
         static void HandlePlates(Dictionary<string, int[]> dic)
         {
+            List<int> drawnNumbers = new List<int>();
+
             int plate1row1Counter = 0;
             int plate1row2Counter = 0;
             int plate1row3Counter = 0;
@@ -62,6 +64,12 @@ namespace BankoCheater
                 try
                 {
                     selectedNumber = int.Parse(Console.ReadLine());
+
+                    if (drawnNumbers.Contains(selectedNumber))
+                    {
+                        Console.WriteLine($"{selectedNumber} has already been used. Pick a different number.");
+                        continue;
+                    }
 
                     foreach (var row in dic)
                     {
@@ -105,6 +113,10 @@ namespace BankoCheater
                             }
                         }
                     }
+
+
+                    drawnNumbers.Add(selectedNumber);
+
 
                     if (plate1row1Counter == 5)
                     {
