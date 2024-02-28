@@ -55,41 +55,35 @@ namespace BankoCheater
                     {
                         if (row.Value.Contains(selectedNumber))
                         {
-                            if (row.Key == "Rasmus1-row1")
+                            switch (row.Key)
                             {
-                                plate1Counter[0]++;
-                            }
-                            else if (row.Key == "Rasmus1-row2")
-                            {
-                                plate1Counter[1]++;
-                            }
-                            else if (row.Key == "Rasmus1-row3")
-                            {
-                                plate1Counter[2]++;
-                            }
-                            else if (row.Key == "Rasmus2-row1")
-                            {
-                                plate2Counter[0]++;
-                            }
-                            else if (row.Key == "Rasmus2-row2")
-                            {
-                                plate2Counter[1]++;
-                            }
-                            else if (row.Key == "Rasmus2-row3")
-                            {
-                                plate2Counter[2]++;
-                            }
-                            else if (row.Key == "Rasmus3-row1")
-                            {
-                                plate3Counter[0]++;
-                            }
-                            else if (row.Key == "Rasmus3-row2")
-                            {
-                                plate3Counter[1]++;
-                            }
-                            else if (row.Key == "Rasmus3-row3")
-                            {
-                                plate3Counter[2]++;
+                                case "Rasmus1-row1":
+                                    plate1Counter[0]++;
+                                    break;
+                                case "Rasmus1-row2":
+                                    plate1Counter[1]++;
+                                    break;
+                                case "Rasmus1-row3":
+                                    plate1Counter[2]++;
+                                    break;
+                                case "Rasmus2-row1":
+                                    plate2Counter[0]++;
+                                    break;
+                                case "Rasmus2-row2":
+                                    plate2Counter[1]++;
+                                    break;
+                                case "Rasmus2-row3":
+                                    plate2Counter[2]++;
+                                    break;
+                                case "Rasmus3-row1":
+                                    plate3Counter[0]++;
+                                    break;
+                                case "Rasmus3-row2":
+                                    plate3Counter[1]++;
+                                    break;
+                                case "Rasmus3-row3":
+                                    plate3Counter[2]++;
+                                    break;
                             }
                         }
                     }
