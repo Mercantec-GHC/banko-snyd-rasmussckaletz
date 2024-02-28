@@ -6,33 +6,24 @@ namespace BankoCheater
     {
         static void Main(string[] args)
         {
-            int[] rasmus1Row1 = new int[] { 1, 20, 32, 71, 80 };
-            int[] rasmus1Row2 = new int[] { 3, 11, 21, 38, 44 };
-            int[] rasmus1Row3 = new int[] { 15, 29, 49, 58, 68 };
 
-            int[] rasmus2Row1 = new int[] { 1, 11, 21, 54, 64 };
-            int[] rasmus2Row2 = new int[] { 2, 12, 22, 36, 86 };
-            int[] rasmus2Row3 = new int[] { 16, 39, 47, 75, 89 };
+            Dictionary<string, int[]> threePlatesDic = new Dictionary<string, int[]>
+            {
+                { "Rasmus1-row1", new int[] { 1, 20, 32, 71, 80 } },
+                { "Rasmus1-row2", new int[] { 3, 11, 21, 38, 44 } },
+                { "Rasmus1-row3", new int[] { 15, 29, 49, 58, 68 } },
+                { "Rasmus2-row1", new int[] { 1, 11, 21, 54, 64 } },
+                { "Rasmus2-row2", new int[] { 2, 12, 22, 36, 86 } },
+                { "Rasmus2-row3", new int[] { 16, 39, 47, 75, 89 } },
+                { "Rasmus3-row1", new int[] { 10, 25, 32, 42, 52 } },
+                { "Rasmus3-row2", new int[] { 28, 33, 48, 56, 88 } },
+                { "Rasmus3-row3", new int[] { 8, 14, 38, 69, 72 } }
+            };
 
-            int[] rasmus3Row1 = new int[] { 10, 25, 32, 42, 52 };
-            int[] rasmus3Row2 = new int[] { 28, 33, 48, 56, 88 };
-            int[] rasmus3Row3 = new int[] { 8, 14, 38, 69, 72 };
-
-            Dictionary<string, int[]> threePlatesDic = new Dictionary<string, int[]>();
-            threePlatesDic.Add("Rasmus1-row1", rasmus1Row1);
-            threePlatesDic.Add("Rasmus1-row2", rasmus1Row2);
-            threePlatesDic.Add("Rasmus1-row3", rasmus1Row3);
-            threePlatesDic.Add("Rasmus2-row1", rasmus2Row1);
-            threePlatesDic.Add("Rasmus2-row2", rasmus2Row2);
-            threePlatesDic.Add("Rasmus2-row3", rasmus2Row3);
-            threePlatesDic.Add("Rasmus3-row1", rasmus3Row1);
-            threePlatesDic.Add("Rasmus3-row2", rasmus3Row2);
-            threePlatesDic.Add("Rasmus3-row3", rasmus3Row3);
 
             HandlePlates(threePlatesDic);
+
         }
-
-
 
         static void HandlePlates(Dictionary<string, int[]> dic)
         {
