@@ -29,21 +29,11 @@ namespace BankoCheater
         {
             List<int> drawnNumbers = new List<int>();
 
-            int plate1row1Counter = 0;
-            int plate1row2Counter = 0;
-            int plate1row3Counter = 0;
+            int[] plate1Counter = new int[3];
+            int[] plate2Counter = new int[3];
+            int[] plate3Counter = new int[3];
 
-            int plate2row1Counter = 0;
-            int plate2row2Counter = 0;
-            int plate2row3Counter = 0;
-
-            int plate3row1Counter = 0;
-            int plate3row2Counter = 0;
-            int plate3row3Counter = 0;
-
-            bool plate1Full = false;
-            bool plate2Full = false;
-            bool plate3Full = false;
+            bool[] platesFull = new bool[3];
 
             int selectedNumber;
             bool gameActive = true;
@@ -68,39 +58,39 @@ namespace BankoCheater
                         {
                             if (row.Key == "Rasmus1-row1")
                             {
-                                plate1row1Counter++;
+                                plate1Counter[0]++;
                             }
                             else if (row.Key == "Rasmus1-row2")
                             {
-                                plate1row2Counter++;
+                                plate1Counter[1]++;
                             }
                             else if (row.Key == "Rasmus1-row3")
                             {
-                                plate1row3Counter++;
+                                plate1Counter[2]++;
                             }
                             else if (row.Key == "Rasmus2-row1")
                             {
-                                plate2row1Counter++;
+                                plate2Counter[0]++;
                             }
                             else if (row.Key == "Rasmus2-row2")
                             {
-                                plate2row2Counter++;
+                                plate2Counter[1]++;
                             }
                             else if (row.Key == "Rasmus2-row3")
                             {
-                                plate2row3Counter++;
+                                plate2Counter[2]++;
                             }
                             else if (row.Key == "Rasmus3-row1")
                             {
-                                plate3row1Counter++;
+                                plate3Counter[0]++;
                             }
                             else if (row.Key == "Rasmus3-row2")
                             {
-                                plate3row2Counter++;
+                                plate3Counter[1]++;
                             }
                             else if (row.Key == "Rasmus3-row3")
                             {
-                                plate3row3Counter++;
+                                plate3Counter[2]++;
                             }
                         }
                     }
@@ -109,79 +99,81 @@ namespace BankoCheater
                     drawnNumbers.Add(selectedNumber);
 
 
-                    if (plate1row1Counter == 5)
+                    if (plate1Counter[0] == 5)
                     {
                         Console.WriteLine("BANKO! Plate 1 - Row1");
-                        plate1row1Counter++;
+                        plate1Counter[0]++;
                     }
-                    if (plate1row2Counter == 5)
+
+                    if (plate1Counter[1] == 5)
                     {
                         Console.WriteLine("BANKO! Plate 1 - Row2");
-                        plate1row2Counter++;
+                        plate1Counter[1]++;
                     }
-                    if (plate1row3Counter == 5)
+
+                    if (plate1Counter[2] == 5)
                     {
                         Console.WriteLine("BANKO! Plate 1 - Row3");
-                        plate1row3Counter++;
+                        plate1Counter[2]++;
                     }
 
 
 
-                    if (plate2row1Counter == 5)
+                    if (plate2Counter[0] == 5)
                     {
                         Console.WriteLine("BANKO! Plate 2 - Row1");
-                        plate2row1Counter++;
+                        plate2Counter[0]++;
                     }
-                    if (plate2row2Counter == 5)
+                    if (plate2Counter[1] == 5)
                     {
                         Console.WriteLine("BANKO! Plate 2 - Row2");
-                        plate2row2Counter++;
+                        plate2Counter[1]++;
                     }
-                    if (plate2row3Counter == 5)
+                    if (plate2Counter[2] == 5)
                     {
                         Console.WriteLine("BANKO! Plate 2 - Row3");
-                        plate2row3Counter++;
+                        plate2Counter[2]++;
                     }
 
 
 
-                    if (plate3row1Counter == 5)
+                    if (plate3Counter[0] == 5)
                     {
                         Console.WriteLine("BANKO! Plate 3 - Row1");
-                        plate3row1Counter++;
+                        plate3Counter[0]++;
                     }
-                    if (plate3row2Counter == 5)
+                    if (plate3Counter[1] == 5)
                     {
                         Console.WriteLine("BANKO! Plate 3 - Row2");
-                        plate3row2Counter++;
+                        plate3Counter[1]++;
                     }
-                    if (plate3row3Counter == 5)
+                    if (plate3Counter[2] == 5)
                     {
                         Console.WriteLine("BANKO! Plate 3 - Row3");
-                        plate3row3Counter++;
+                        plate3Counter[2]++;
                     }
 
 
 
-                    if (plate1row1Counter == 6 && plate1row2Counter == 6 && plate1row3Counter == 6 && plate1Full == false)
+                    if (plate1Counter[0] == 6 && plate1Counter[1] == 6 && plate1Counter[2] == 6 && platesFull[0] == false)
                     {
                         Console.WriteLine("FULL PLATE - PLATE 1!");
-                        plate1Full = true;
+                        platesFull[0] = true;
                     }
 
-                    if (plate2row1Counter == 6 && plate2row2Counter == 6 && plate2row3Counter == 6 && plate2Full == false)
+                    if (plate2Counter[0] == 6 && plate2Counter[1] == 6 && plate2Counter[2] == 6 && platesFull[1] == false)
                     {
                         Console.WriteLine("FULL PLATE - PLATE 2!");
-                        plate2Full = true;
+                        platesFull[1] = true;
                     }
 
-                    if (plate3row1Counter == 6 && plate3row2Counter == 6 && plate3row3Counter == 6 && plate3Full == false)
+                    if (plate3Counter[0] == 6 && plate3Counter[1] == 6 && plate3Counter[2] == 6 && platesFull[2] == false)
                     {
                         Console.WriteLine("FULL PLATE - PLATE 3!");
-                        plate3Full = true;
+                        platesFull[2] = true;
                     }
 
-                    if (plate1Full && plate2Full && plate3Full)
+                    if (platesFull[0] && platesFull[1] && platesFull[2])
                     {
                         Console.WriteLine("ALL PLATES FULL!");
                         gameActive = false;
